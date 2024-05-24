@@ -4,7 +4,8 @@ import { Button, Typography, Card, CardActions, CardContent, CardMedia, CssBasel
 import { Hero } from './components/Hero';
 import { TopNavBar } from './components/TopNavBar';
 
-import CardList from './components/Card/CardList';
+import { CardList } from './components/Card';
+import { Footer } from './components/Footer';
 
 class App extends Component {
   render() {
@@ -19,6 +20,8 @@ class App extends Component {
         <Hero />
 
         <CardList />
+
+        <Footer />
 
       </>
     )

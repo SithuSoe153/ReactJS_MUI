@@ -5,22 +5,35 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles((theme) => ({
-
+    card: {
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+    },
+    cardMedia: {
+        paddingTop: '56.25%', // 16:9
+    },
+    cardContent: {
+        flexGrow: 1,
+    },
 }));
 
 
 
-const Cards = () => {
+const Cards = (cards) => {
+    const randomSeed = Math.floor(Math.random() * 1000);
+
     const classes = useStyles();
 
     return (
 
-        <Card>
+        <Card className={classes.card}>
             <CardMedia
-                image='https://images.unsplash.com/photo-1542782321-68565921213a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+                className={classes.cardMedia}
+                image={`https://source.unsplash.com/random/?sig=${randomSeed}`}
                 title='Contemplative Reptile'
             />
-            <CardContent>
+            <CardContent className={classes.cardContent}>
                 <Typography gutterBottom variant="h5">Heading</Typography>
                 <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat illum, quaerat dolorum odit est explicabo vel in consectetur animi dignissimos?</Typography>
             </CardContent>
